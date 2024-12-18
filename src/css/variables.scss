@@ -1,0 +1,80 @@
+
+@font-face {
+  font-family: 'Lufga Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Lufga Regular'), url('../fonts/LufgaRegular.woff') format('woff');
+}
+
+// colors 
+$gradient: linear-gradient(180deg, #0096C7 0%, #48CAE4 100%);
+$hero_gradient:linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #005976 100%);
+$primary: #FD6F00;
+$support_primary:#E46400;
+$grey: #959595;
+$black: #1A1A1A;
+$white: #fff;
+ 
+
+
+body{
+  background-color: $black !important;
+  color: $white;
+  // overflow-y: hidden;
+}
+
+
+
+// typography 
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+$font-weight-400:"400";
+$font-weight-600:"600";
+$font-weight-700:"700";
+$body-font:'Lufga Regular';
+
+$h1-xs-font-size: $font-size-base * 4.375;
+$h2-xs-font-size: $font-size-base * 2.5;
+$h3-xs-font-size: $font-size-base * 1.125;
+$h4-xs-font-size: $font-size-base * 1;
+
+
+$h1-font-size: $font-size-base * 4.375;
+$h2-font-size: $font-size-base * 2.5;
+$h3-font-size: $font-size-base * 1.875; 
+$h4-font-size: $font-size-base * 1.75;
+$h5-font-size: $font-size-base * 1.5;
+
+
+$headings-font-weight: 800;
+
+// $large-font-size: $font-size-base * 1.25;
+// $small-font-size: $font-size-base * 0.875;
+// $headings-font-weight: 700;
+
+$p1-xs-font-size: $font-size-base * 0.875;
+$p2-xs-font-size: $font-size-base * 0.875;
+
+$p1-font-size: $font-size-base * 1.25;
+$p2-font-size: $font-size-base * 1;
+
+
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / laptop
+  lg: 992px,
+  // Extra large screen / desktop
+  xl: 1200px,
+  // 2x Extra Large screen / wide desktop
+  xxl: 1400px,
+  // Huge screen / widest desktop
+  hg: 1600px,
+  // Gigantic Screen / 4K
+  gt: 2100px
+);
