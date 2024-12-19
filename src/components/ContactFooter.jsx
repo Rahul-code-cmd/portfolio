@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { faInstagram, faFacebook, faBehance } from '@fortawesome/free-brands-svg-icons'; 
+import { faInstagram, faFacebook, faBehance ,faLinkedin } from '@fortawesome/free-brands-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons/faMailBulk';
 import { faMailForward } from '@fortawesome/free-solid-svg-icons/faMailForward';
@@ -13,14 +13,10 @@ const ContactFooter = () => {
             <div className="row">
                 <div className="col">
                 <ul className='footer_social_icons' >
-    <li>
-   <Link to="/" >
-   <FontAwesomeIcon icon={faInstagram} />
-   </Link>
-    </li>
+    
     <li>
     <Link to="/">
-   <FontAwesomeIcon icon={faFacebook} />
+   <FontAwesomeIcon icon={faLinkedin} />
    </Link>
     </li>
     <li>
@@ -30,7 +26,7 @@ const ContactFooter = () => {
     </li>
    </ul>
                 </div>
-                <div className="gmail_wrap">
+                {/* <div className="gmail_wrap">
                     <div className="gmail ">
                     <p><FontAwesomeIcon icon={faEnvelope} /></p>
                     <p>Mahmood.fazile7005@gmail.com</p>
@@ -39,7 +35,7 @@ const ContactFooter = () => {
                     <p><FontAwesomeIcon icon={faPhoneAlt} /></p>
                     <p>+93 729 107 005</p>
                     </div>
-                </div>
+                </div> */}
                 <p className='designedby'>Designed by @mahmood.fazile UI/UX designer</p>
             </div>
         </div>

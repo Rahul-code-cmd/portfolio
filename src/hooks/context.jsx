@@ -15,12 +15,8 @@ import portimg4 from '../assets/project4.jpg'
 import portimg5 from '../assets/project5.jpg'
 
 
-
-
-
-
-
-
+// card
+import plusimage from '../icons/plus.svg'
 export const MyContext = createContext();
 
 export const MyProvider = ({ children }) => {
@@ -155,10 +151,28 @@ export const MyProvider = ({ children }) => {
   ]
 
 
-  console.log('Context provided:', serviceData); 
+const cards=[
+  {
+    id:1,
+    name:"Phone number",
+    value:"(2)",
+    para:"+99999999",
+    img:plusimage,
+  },
+  {
+    id:2,
+    name:"Gmail Address",
+    value:"(2)",
+    para:"Rahul.dixit@eglogics.com",
+    img:plusimage,
+  },
+]
+console.log(cards,"mukesish sir data");
+
+//   console.log('Context provided:', serviceData); 
 
   return (
-    <MyContext.Provider value={{serviceData,portfoliodata,designingcontent}}>
+    <MyContext.Provider value={{serviceData,portfoliodata,designingcontent,cards}}>
       {children}
     </MyContext.Provider>
   );

@@ -12,13 +12,19 @@ const Header = () => {
 
   return (
     <header>
+      <div className='flatcolor_div'>
+  <p className='floatcolor1'></p>
+  <p className='floatcolor2'></p>
+  <p className='floatcolor3'></p>
+  <p></p>
+</div>
       <div className="container">
         <div className="row justify-content-center">
           <div className="headerbar">
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
               <div className="container-fluid">
                 <NavLink to="/" className="navbar-brand">
-                  <h2 className="logo gradinet_color">LOGO</h2>
+                  <h2 className="logo gradinet_color">D</h2>
                 </NavLink>
                 <button
                   className="navbar-toggler"
@@ -50,7 +56,7 @@ const Header = () => {
                           isActive ? 'nav-link active-link' : 'nav-link'
                         }
                       >
-                        Services
+                        Skills
                       </NavLink>
                     </li>
                     <li className="nav-item">
@@ -84,31 +90,31 @@ const Header = () => {
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                    <FormControl fullWidth>
-  <InputLabel 
-    id="dropdown-label" 
-    sx={{ color: '#959595' }}
-  >
-    Color
-  </InputLabel>
-  <Select
-    labelId="dropdown-label"
-    id="dropdown"
-    label="Color"
-    onChange={handleChange}
-    sx={{ color: '#959595' }} // This changes the text color inside the dropdown to white
-  >
-    <MenuItem value={10}>Red</MenuItem>
-    <MenuItem value={20}>Orange</MenuItem>
-    <MenuItem value={30}>Green</MenuItem>
-  </Select>
-</FormControl>
+                      {/* <FormControl fullWidth>
+                        <InputLabel 
+                          id="dropdown-label" 
+                          sx={{ color: '#959595' }}
+                        >
+                          Color
+                        </InputLabel>
+                        <Select
+                          labelId="dropdown-label"
+                          id="dropdown"
+                          label="Color"
+                          onChange={handleChange}
+                          sx={{ color: '#959595' }} // This changes the text color inside the dropdown to white
+                        >
+                          <MenuItem value={10}>Red</MenuItem>
+                          <MenuItem value={20}>Orange</MenuItem>
+                          <MenuItem value={30}>Green</MenuItem>
+                        </Select>
+                      </FormControl> */}
 
                     </li>
                   </ul>
-                  <form className="d-flex" role="search">
+                  <form className="d-flex justify-content-center " role="search">
                     <button className="button_primary" type="submit">
-                      Hire Me
+                      Download CV
                     </button>
                   </form>
                 </div>

@@ -1,33 +1,78 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import aboutimg from '../assets/aboutme.png'
 import Loader from './Loader'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import Card from './Card';
+import Accordion from './Accordion';
+
 
 const AboutMe = () => {
-  return (
- <section className='aboutme_wrap p50'>
-     <div>
-      <h2 className='text-center'>About me</h2>
-      <p className='text-center'>User Interface and User Experience and Also video editing </p>
 
+  const abouthead=useRef()
+  useGSAP(()=>{
+    abouthead.current=gsap
+    .timeline()
+    .from(".abouthead_div",{
+      duration: 10,
+      // rotationY: 360, // 3D rotation
+      color:"#23e1d1", // New color
+      ease: "power2.inOut", // Smooth easing
+      // repeat: -1, // Infinite loop
+      yoyo: true, 
+    })
+
+  })
+
+
+  return (
+<>
+<section className='aboutme_wrap p50'>
+     <div>
       <div className="container">
         <div className="row justify-content-between align-items-center">
           <div className="col-lg-5">
             <img src={aboutimg} alt="aboutimg"  className='w-100'/>
           </div>
-          <div className="col-lg-6">
-            <div>
+          <div className="col-lg-7">
+   <div className="row">
+    <div className="col-lg-12">
+     <div className="abouthead_div" ref={abouthead}>
+     <h6>About</h6>
+      <h1 className='text-white'>Privileged
+Working With
+MENA's
+Brightest</h1>
+     </div>
+    </div>
+    <div className="col-lg-12">
+    <div className='abouttext'>
               <p>
-              A software engineer, the modern-day architect of digital realms, navigates the ethereal landscapes of code, sculpting intangible structures that shape our technological world. With fingers poised over keyboards like virtuoso pianists, they compose symphonies of logic, their minds a labyrinth of algorithms and solutions.Their canvas is a screen, a vast expanse where lines of code dance in intricate patterns, weaving the fabric of programs and applications. Each keystroke is a brushstroke, crafting intricate architectures and breathing life into innovative designs.In this digital atelier, they don the mantle of problem solvers, confronting bugs and glitches like valiant knights in an ever-evolving quest for perfection. Debugging becomes a noble pursuit, unraveling the mysteries hidden within the tangled webs of code. designs.In this digital atelier.
+              Over the past 15 years, I've had the privilege of collaborating with MENA titans like Gucci, Emirates NBD, MG Motors, Museum of the Future and an array of other visionary leaders.
               </p>
-              <button className='button_primary '>Download CV</button>
+              <p>
+              From the ground-breaking to the game-changing, I've supported businesses to raise the bar of user experience.
+              </p>
+              <p>
+           
+               Currently working at TCS Interactive as UX/UI Design Lead, Where I guide an exceptional talented team on a mission to craft astonishing solutions for TCS partners.
+              </p>
+            
+              {/* <h2 className='text-white py-4 text-center'>My working </h2> */}
+      <Accordion/>
             </div>
+    </div>
+      <button className='button_primary '>Download CV</button>
+   </div>
           </div>
         {/* <Loader percentage={75} size={120} strokeWidth={8}/>
         <Loader percentage={50} size={100} strokeWidth={10}/> */}
+        {/* <Card/> */}
         </div>
       </div>
     </div>
  </section>
+</>
   )
 }
 

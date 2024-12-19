@@ -1,59 +1,59 @@
-@import "./mixins";
-@import "./variables";
+@use "mixins";
+@use "variables";
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: $body-font;
+  font-family: variables.$body-font;
   text-decoration: none;
   list-style: none;
 }
 // fonts typography start
 
 .h1 {
-  font-size: $h1-font-size !important;
-  @include media-breakpoint-down(lg) {
-    font-size: $h1-xs-font-size !important;
+  font-size: variables.$h1-font-size !important;
+  @include mixins.media-breakpoint-down(lg) {
+    font-size: variables.$h1-xs-font-size !important;
   }
 }
 
 .h2 {
-  font-size: $h2-font-size !important;
-  @include media-breakpoint-down(lg) {
-    font-size: $h2-xs-font-size !important;
+  font-size: variables.$h2-font-size !important;
+  @include mixins.media-breakpoint-down(lg) {
+    font-size: variables.$h2-xs-font-size !important;
   }
 }
 
 .h3 {
-  font-size: $h3-font-size !important;
-  @include media-breakpoint-down(lg) {
-    font-size: $h3-xs-font-size !important;
+  font-size: variables.$h3-font-size !important;
+  @include mixins.media-breakpoint-down(lg) {
+    font-size: variables.$h3-xs-font-size !important;
   }
 }
 
 .h4 {
-  font-size: $h4-font-size !important;
-  @include media-breakpoint-down(lg) {
-    font-size: $h4-xs-font-size !important;
+  font-size: variables.$h4-font-size !important;
+  @include mixins.media-breakpoint-down(lg) {
+    font-size: variables.$h4-xs-font-size !important;
   }
 }
 
 .p1 {
-  font-size: $p1-font-size !important;
+  font-size: variables.$p1-font-size !important;
   margin: 0px;
   font-weight: 400;
-  @include media-breakpoint-down(lg) {
-    font-size: $p1-xs-font-size !important;
+  @include mixins.media-breakpoint-down(lg) {
+    font-size: variables.$p1-xs-font-size !important;
     margin: 0px;
   }
 }
 .p2 {
-  font-size: $p2-font-size;
+  font-size: variables.$p2-font-size;
   margin: 0px;
   font-weight: 700;
-  @include media-breakpoint-down(lg) {
-    font-size: $p2-xs-font-size;
+  @include mixins.media-breakpoint-down(lg) {
+    font-size: variables.$p2-xs-font-size;
   }
 }
 
@@ -63,23 +63,34 @@
 // fonts typography end
 
 .button_primary {
-  background: linear-gradient(94.36deg, $primary 3.1%, $support_primary 94.54%);
+  background: linear-gradient(94.36deg, variables.$primary 3.1%, variables.$support_primary 94.54%);
   border-radius: 8px;
   border: none;
-  color: $white;
+  color: variables.$black;
   padding: 12px 40px;
-  @include media-breakpoint-down(md){
+  font-weight: 700;
+  transition:ease-in-out;
+  transition-duration: 5s;
+  transition-delay: 1s;
+  &:hover{
+    background: linear-gradient(94.36deg, variables.$support_primary 3.1%, variables.$primary 94.54%);
+  
+
+    
+  }
+  @include mixins.media-breakpoint-down(md){
     width: 100%;
   }
+ 
 }
 .notbutton_primary {
   background: transparent;
-  border: 2px solid $grey !important;
+  border: 2px solid variables.$grey !important;
   border-radius: 8px;
   border: none;
-  color: $grey;
+  color: variables.$grey;
   padding: 12px 40px;
-  @include media-breakpoint-down(md){
+  @include mixins.media-breakpoint-down(md){
     width: 100%;
   }
 }
@@ -88,17 +99,17 @@
   gap: 40px;
   margin: 0px;
   .nav-item {
-    color: $grey;
+    color: variables.$grey;
   }
   .nav-item:hover {
-    color: $primary;
+    color: variables.$primary;
   }
 }
 .headerbar {
   padding-top: 17px;
 }
 .gradinet_color {
-  background: linear-gradient(90deg, $primary 0%, #e60026 100%);
+  background: linear-gradient(90deg, variables.$primary 0%, variables.$support_primary 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -113,9 +124,15 @@
   padding-top: 40px;
 }
 .name {
+  p{
+    color: variables.$white;
+    line-height: 30px;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
   h3,
   h2 {
-    color: $grey;
+    color: variables.$white;
     padding-top: 8px;
   }
   h1 {
@@ -129,20 +146,20 @@
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
   font-size: var(--bs-navbar-brand-font-size);
-  color: $grey !important;
+  color: variables.$grey !important;
   text-decoration: none;
   white-space: nowrap;
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
-  color: $grey !important;
+  color: variables.$grey !important;
 }
 .nav-link {
   display: block;
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
-  color: $grey !important;
+  color: variables.$grey !important;
   text-decoration: none;
   background: 0 0;
   border: 0;
@@ -151,14 +168,14 @@
 }
 nav.bg-body-tertiary {
   --bs-bg-opacity: 1;
-  background-color: $black !important;
+  background-color: variables.$black !important;
 }
 .navbar-toggler {
   padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
   font-size: var(--bs-navbar-toggler-font-size);
   line-height: 1;
   color: var(--bs-navbar-color);
-  background-color: $white !important;
+  background-color: variables.$white !important;
   border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
@@ -177,7 +194,7 @@ nav.bg-body-tertiary {
     height: 50px;
     width: 50px;
     a {
-      color: $grey;
+      color: variables.$grey;
       text-align: center;
       display: block;
       font-size: 20px;
@@ -189,13 +206,17 @@ nav.bg-body-tertiary {
   display: flex;
   gap: 20px;
   padding-top: 20px;
-  @include media-breakpoint-down(md){
+  @include mixins.media-breakpoint-down(md){
     flex-wrap: wrap;
+  }
+  button{
+    display: flex;
+    justify-content: center;
   }
 }
 
 .experience_wrap {
-  background: #ffffff0a;
+  background: #dfd4d40a;
   margin-top: 40px;
   border-radius: 8px;
   color: white;
@@ -204,16 +225,18 @@ nav.bg-body-tertiary {
   justify-content: center;
   font-weight: 700;
   gap: 40px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border: 1px solid white;
   .leftborder {
-    border-left: 1px solid $grey;
+    border-left: 1px solid variables.$grey;
     padding-left: 40px;
   }
   .count {
-    color: $primary;
+    color: variables.$primary;
     font-weight: 700;
   }
 
-  @include media-breakpoint-down(md){
+  @include mixins.media-breakpoint-down(md){
     flex-wrap: wrap;
     justify-content: flex-start;
   }
@@ -224,11 +247,11 @@ nav.bg-body-tertiary {
   padding-top: 60px;
 
   h2 {
-    color: $white;
+    color: variables.$white;
     text-align: center;
   }
   p {
-    color: $grey;
+    color: variables.$grey;
     text-align: center;
     padding-top: 20px;
   }
@@ -246,26 +269,26 @@ nav.bg-body-tertiary {
       filter: invert(1) brightness(100%) grayscale(100%) contrast(100%);
     }
     h4 {
-      color: $primary;
+      color: variables.$primary;
     }
     h3 {
-      color: $grey;
+      color: variables.$grey;
     }
   }
 }
 .aboutme_wrap {
-  color: $grey;
+  color: variables.$grey;
   h2 {
-    color: $white;
+    color: variables.$white;
   }
   p {
     line-height: 30px;
-    @include media-breakpoint-down(md){
+    @include mixins.media-breakpoint-down(md){
       padding: 10px;
     }
   }
   button {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 }
 // // progress bar
@@ -288,17 +311,17 @@ nav.bg-body-tertiary {
 //    color: #333;
 //  }
 .tabs {
-  color: $white;
+  color: variables.$white;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: $white !important;
-  background-color: $primary !important;
+  color: variables.$white !important;
+  background-color: variables.$primary !important;
 }
 .portfolio_wrap {
-  color: $grey;
+  color: variables.$grey;
   h1 {
-    color: $white;
+    color: variables.$white;
   }
   .nav-pills {
     padding-top: 50px;
@@ -322,19 +345,22 @@ nav.bg-body-tertiary {
     }
   }
   .gallery_txt {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: space-between;
     padding-top: 20px;
+    p{
+      margin: 0px;
+    }
   }
 }
 
 .design_wrap {
   h1 {
-    color: $white;
+    color: variables.$white;
   }
   p {
-    color: $grey;
+    color: variables.$grey;
   }
   .gallery {
     flex: 0 0 calc(100% / 4);
@@ -375,7 +401,7 @@ nav.bg-body-tertiary {
      height: 50px;
      width: 50px;
      a {
-       color: $grey;
+       color: variables.$grey;
        text-align: center;
        display: block;
        font-size: 20px;
@@ -393,7 +419,7 @@ nav.bg-body-tertiary {
       display: flex;
       align-items: center;
       gap: 20px;
-      color: $grey;
+      color: variables.$grey;
       p{
          margin: 0px;
       }
@@ -401,8 +427,8 @@ nav.bg-body-tertiary {
 }
  .designedby{
    text-align: center;
-   color: $grey;
-   border-top: 1px solid $grey;
+   color: variables.$grey;
+   border-top: 1px solid variables.$grey;
    padding-top: 20px;
    
  }
@@ -415,7 +441,6 @@ nav.bg-body-tertiary {
     display: grid
 ;
     place-items: center;
-    height: 80vh;
  }
  label[data-shrink=false]+.MuiInputBase-formControl .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
    // border:1px solid $white;
@@ -432,28 +457,139 @@ nav.bg-body-tertiary {
 }
 .css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
    padding-right: 32px;
-   color: $grey !important;
+   color: variables.$grey !important;
 }
 .css-113d811-MuiFormLabel-root-MuiInputLabel-root {
-   color: $primary !important;
+   color: variables.$primary !important;
   
 }
 .css-113d811-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-   color: $primary !important;
+   color: variables.$primary !important;
 }
 .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon {
-   color: $white !important;
+   color: variables.$white !important;
 }
 .css-113d811-MuiFormLabel-root-MuiInputLabel-root {
-   color: $grey  !important;
+   color: variables.$grey  !important;
 }
 /* Style for active link */
 .nav-link.active-link {
-   color: $primary  !important; 
+   color: variables.$support_primary  !important; 
    font-weight: bold;
  }
  .notranslate::after{
-  color: $white !important;
+  color: variables.$white !important;
  }
 
+ .abouttext{
+  // padding-top: 240px;
+  
+ }
+ .abouthead_div{
+letter-spacing: 2px;
+line-height: 10px;
+ }
+
+ .abouthead_div{
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  perspective: "100px";
+  
+  h6{
+    color: variables.$support_primary;
+  }
+  
+ }
+
+
+ .cards{
+  margin-top: 50px;
+  color: variables.$white;
+  img{
+    width: 20px;
+    display: flex;
+    justify-content: end;
+    fill: #000;
+    filter: brightness(0) invert(1);
+  }
+  .cardPlusimage{
+    display: flex;
+    justify-content: end;
+    p{
+      color:  variables.$support_primary ;
+    }
+  }
+  .innercard{
+    background-color:  rgba(40, 40, 43, 0.6156862745);
+    border: 1px solid #222222;
+    padding: 20px;
+    border-radius: 6px;
+
+    p{
+      color: variables.$support_primary;
+    }
+  }
+ }
+
+//  accordion 
+.accordion-item {
+  color:variables.$white  !important;
+  background-color:variables.$black !important;
+  border: none !important;
+  margin: 10px;
+}
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 30px !important;
+  color: variables.$white !important;
+  background-color: #28282b9d !important;
+  // background-color: #28282B !important;
  
+}
+.accordion-button::after {
+  fill: white;
+  filter: brightness(0.5) invert(1);
+}
+.accordion-button:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow:none;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+}
+.flatcolor_div{
+  position: fixed;
+  top: 20%;
+  right: 7px;
+  z-index: 9999;
+  background-color: variables.$black;
+  padding: 20px 10px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  .floatcolor1{
+    background-color:#23e1d1 ;
+    border-radius: 100%;
+    height: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 30px;
+    margin: 5px;
+
+  }
+  .floatcolor2{
+    background-color: rgb(255, 251, 29);
+    border-radius: 100%;
+    height: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 30px;
+    margin: 5px;
+
+  }
+
+}
+button:focus:not(:focus-visible) {
+  box-shadow: none !important;
+}
